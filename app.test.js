@@ -1,8 +1,8 @@
 const request = require('supertest');
-const { app, server } = require('./index');
+const { app, closeServer } = require('./index');
 
 afterAll((done) => {
-  server.close(done); // Tutup server setelah semua pengujian selesai
+  closeServer(done); // Tutup server setelah semua pengujian selesai
 });
 
 test('responds with Hello World!', async () => {
